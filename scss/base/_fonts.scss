@@ -1,0 +1,25 @@
+/* _fonts.scss */
+
+@font-face {
+  font-family: "Ease";
+  src: url("../assets/fonts/EaseVariable.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asap";
+  src: url("../assets/fonts/Asap-Variable.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Variable.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,54 @@
+@use "../utils/variables" as *;
+
+// === CONFIGURATION GLOBALE === //
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-height: 104px; // Ajustez selon votre header réel
+
+  @media (max-width: 768px) {
+    --header-height: 80px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; // ← Empêche le scroll sur desktop
+
+  @media (max-width: 768px) {
+    overflow-y: auto; // ← Permet le scroll sur mobile
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  transition: background-color 0.4s ease;
+  position: relative;
+  color: var(--text);
+  text-shadow: $text-shadow-light;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+/* Mode sombre (quand la classe .dark est sur le body) */
+body.dark {
+  // Aucune variable ici, elles viennent déjà de ton fichier variables.scss
+  // Optionnellement, tu peux ajouter des styles spécifiques :
+  text-shadow: $text-shadow-strong;
+}

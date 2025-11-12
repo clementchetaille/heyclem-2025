@@ -1,0 +1,161 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.loader {
+  width: 224px; /* 112 * 2 */
+  height: 224px; /* 112 * 2 */
+}
+
+.box1,
+.box2,
+.box3 {
+  border: 20px solid; /* 25 * 2 */
+  color: #60d0bc;
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+
+  opacity: 60%;
+}
+
+.box1::after,
+.box2::after,
+.box3::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 25px;
+  border: 20px solid;
+  border-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")
+    20 stretch; /* le grain sur la bordure seulement */
+  pointer-events: none;
+  opacity: 60%;
+}
+
+.box1 {
+  width: 224px; /* 112 * 2 */
+  height: 96px; /* 48 * 2 */
+  margin-top: 128px; /* 64 * 2 */
+  margin-left: 0px;
+  animation: abox1 4s 1s forwards ease-in-out infinite;
+}
+
+.box2 {
+  width: 128px; /* 64 * 2 */
+  height: 96px; /* 48 * 2 */
+  margin-top: 0px;
+  margin-left: 0px;
+  animation: abox2 4s 1s forwards ease-in-out infinite;
+}
+
+.box3 {
+  width: 96px; /* 48 * 2 */
+  height: 96px; /* 48 * 2 */
+  margin-top: 0px;
+  margin-left: 128px; /* 64 * 2 */
+  animation: abox3 4s 1s forwards ease-in-out infinite;
+}
+
+/* === KEYFRAMES DOUBLÉES === */
+
+@keyframes abox1 {
+  0% {
+    width: 224px;
+    height: 96px;
+    margin-top: 128px;
+    margin-left: 0px;
+  }
+
+  12.5%,
+  25%,
+  37.5%,
+  50%,
+  62.5% {
+    width: 96px;
+    height: 96px;
+    margin-top: 128px;
+    margin-left: 0px;
+  }
+
+  75% {
+    width: 96px;
+    height: 224px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  87.5%,
+  100% {
+    width: 96px;
+    height: 96px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+
+@keyframes abox2 {
+  0%,
+  12.5%,
+  25%,
+  37.5% {
+    width: 96px;
+    height: 96px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  50% {
+    width: 224px;
+    height: 96px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  62.5%,
+  75%,
+  87.5%,
+  100% {
+    width: 96px;
+    height: 96px;
+    margin-top: 0px;
+    margin-left: 128px;
+  }
+}
+
+@keyframes abox3 {
+  0%,
+  12.5% {
+    width: 96px;
+    height: 96px;
+    margin-top: 0px;
+    margin-left: 128px;
+  }
+
+  25% {
+    width: 96px;
+    height: 224px;
+    margin-top: 0px;
+    margin-left: 128px;
+  }
+
+  37.5%,
+  50%,
+  62.5%,
+  75%,
+  87.5% {
+    width: 96px;
+    height: 96px;
+    margin-top: 128px;
+    margin-left: 128px;
+  }
+
+  100% {
+    width: 224px;
+    height: 96px;
+    margin-top: 128px;
+    margin-left: 0px;
+  }
+}

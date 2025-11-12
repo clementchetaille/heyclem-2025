@@ -1,0 +1,83 @@
+// 🎨 Couleurs
+$color-bg: #f5ebd4;
+$color-text: #626a89;
+$color-text-darkmode: #f5ebd4;
+$color-accent: #f0a500;
+$color-glass: rgba(255, 255, 255, 0.1);
+$color-border: rgba(255, 255, 255, 0.2);
+$color-yellow: #edb74d;
+$color-red: #eb6666;
+$color-green: #6fb18a;
+$gradient-pastel-1: linear-gradient(
+  120deg,
+  #ffd1dc,
+  // rose pastel
+  #a8d8ff // bleu pastel
+);
+$gradient-pastel-2: linear-gradient(
+  135deg,
+  #ffe5d9,
+  // pêche clair
+  #ffb3a7,
+  // corail pastel
+  #fff8b5 // jaune doux
+);
+
+$gradient-pastel-3: linear-gradient(
+  160deg,
+  #e0c3fc,
+  // lavande pastel
+  #a0d8ef,
+  // bleu ciel pastel
+  #b8f1d8 // vert menthe doux
+);
+
+$gradient-pastel-4: linear-gradient(
+  145deg,
+  #ff9a8b,
+  // corail vif
+  #ffb3c1,
+  // rose bonbon
+  #9b5de5 // violet saturé
+);
+
+// 🧱 Structure
+$container-width: 1400px;
+$radius: 20px;
+
+// ✍️ Typo
+$font-main: "Quicksand", sans-serif;
+$font-fira: "Fira Code", sans-serif;
+$font-size-base: 16px;
+$font-size-l: 30px;
+$font-size-m: 60px;
+$font-size-xl: 100px;
+$font-size-xxl: 150px;
+
+// 🕶 Effets
+$blur: 10px;
+$shadow: 0 0 10px rgba(49, 47, 47, 0.3);
+$shadow-white: 0 0 5px rgba(203, 197, 197, 0.3);
+$text-shadow-light: 1px 1px 2px rgba(47, 46, 46, 0.2);
+$text-shadow-strong: 2px 4px 5px rgba(47, 46, 46, 0.5);
+$shadow-button-music: rgba(0, 0, 0, 0.377) 4px 6px 4px,
+  #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -3.2px -3.2px 8px 0px inset;
+
+// AUTOMATION SHADOW //
+:root {
+  --shadow: 0 0 10px rgba(49, 47, 47, 0.3);
+}
+
+.dark {
+  --shadow: 0 0 10px rgba(203, 197, 197, 0.931);
+}
+
+:root {
+  --background-color: #f5ebd4;
+  --text: #626a89;
+}
+
+.dark {
+  --background-color: #2a2a2a;
+  --text: #f5ebd4;
+}

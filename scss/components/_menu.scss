@@ -1,0 +1,263 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+// NAVIGATION - Fullscreen
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 99;
+
+  // Cachée par défaut
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  // Visible quand active
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  a {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+
+    // Animation de base : caché en haut avec plus de distance
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &:hover {
+      color: #e8b43b;
+      transform: translateX(10px) !important;
+    }
+  }
+
+  &.active {
+    a {
+      opacity: 1;
+      transform: translateY(0);
+
+      &:nth-child(1) {
+        transition-delay: 0.15s;
+      }
+      &:nth-child(2) {
+        transition-delay: 0.25s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.35s;
+      }
+      &:nth-child(4) {
+        transition-delay: 0.45s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.55s;
+      }
+    }
+  }
+}
+
+// Empêcher le scroll quand le menu est ouvert
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+// CONTENEUR GRID pour Switch + Hamburger
+.header-controls {
+  position: fixed;
+  top: 2rem;
+  right: 6rem;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem; // ← L'espace entre les deux
+  align-items: center;
+
+  @media (max-width: 768px) {
+    top: 1.5rem;
+    right: 1.5rem;
+    gap: 1.4rem;
+  }
+}
+
+// SWITCH - ENLEVER TOUTE POSITION FIXED
+.switch-mode {
+  display: inline-flex; // ← Changé de flex à inline-flex
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0; // ← Pas de padding
+  width: auto; // ← Largeur automatique
+}
+
+.switch {
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  margin: 0; // ← Important
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    width: 3.2em;
+    height: 1.8em;
+  }
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7ecbff;
+  transition: 0.6s ease;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Soleil */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  left: 0.5em;
+  bottom: 0.5em;
+  transition: 0.6s ease;
+  transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
+  box-shadow: inset 12px -3px 0px 12px #ffcf48;
+}
+
+/* Mode nuit */
+.switch input:checked + .slider {
+  background-color: #2a2a2a;
+}
+
+/* Lune */
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+  box-shadow: inset 4px -2px 0px 0px #fff;
+}
+
+/* Étoiles */
+.star {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.star_1 {
+  left: 1em;
+  top: 0.4em;
+}
+
+.star_2 {
+  left: 1.2em;
+  top: 1em;
+}
+
+.star_3 {
+  left: 0.5em;
+  top: 0.7em;
+}
+
+.switch input:checked ~ .slider .star {
+  opacity: 1;
+}
+
+/* Nuage */
+.cloud {
+  width: 2.2em;
+  position: absolute;
+  top: 0.1rem;
+  bottom: 0.2em;
+  left: 1.6rem;
+  opacity: 1;
+  transition: all 0.6s ease;
+}
+
+.switch input:checked ~ .slider .cloud {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// HAMBURGER - ENLEVER TOUTE POSITION FIXED
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative; // ← Pas fixed !
+  margin: 0; // ← Important
+  // Enlever tout top, right, left, bottom
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 2.5px;
+  background-color: $color-text;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+// Animation croix (X)
+.hamburger.active {
+  .hamburger-line {
+    background-color: #fff;
+  }
+
+  .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}

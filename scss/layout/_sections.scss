@@ -1,0 +1,672 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+// -----------------------------//
+// ----- SECTIONS BASE ------- //
+// ---------------------------//
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  z-index: 1;
+
+  .container {
+    width: 100%;
+    max-width: $container-width; // = 1400px
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+// ------------------------//
+// ----- HERO SECTION --- //
+// ----------------------//
+#hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    z-index: 1;
+
+    // Centrer tout le contenu sur mobile
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(1, minmax(200px, auto));
+  gap: 0.4rem;
+  padding: 12rem;
+
+  // Responsive mobile
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.hero-case1 {
+  display: flex;
+  grid-column: span 1;
+  grid-row: span 1;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: $font-size-xl;
+
+    @media (max-width: 768px) {
+      font-size: $font-size-l;
+    }
+  }
+
+  .box-anim {
+    display: flex;
+
+    @media (max-width: 768px) {
+      transform: scale(0.8); // Réduit l'animation à 60%
+    }
+  }
+
+  // Sur mobile : mettre l'animation en dernier
+  @media (max-width: 768px) {
+    order: 3;
+    aspect-ratio: auto;
+    width: 100%;
+  }
+}
+
+.hero-case2 {
+  grid-column: span 1;
+  grid-row: span 1;
+  align-content: center;
+
+  h2 {
+    font-size: $font-size-xxl;
+
+    @media (max-width: 768px) {
+      font-size: $font-size-m;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-l;
+
+    @media (max-width: 768px) {
+      font-size: $font-size-base;
+    }
+  }
+
+  // Sur mobile : premier élément (titre centré)
+  @media (max-width: 768px) {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.hero-case3 {
+  grid-column: span 2;
+  min-height: 200px;
+  align-content: center;
+
+  // Sur mobile : deuxième élément (texte centré)
+  @media (max-width: 768px) {
+    order: 2;
+    min-height: auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#hero h1 {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  text-shadow: $text-shadow-strong;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-l;
+  }
+}
+
+#hero p {
+  font-size: $font-size-l;
+  font-weight: 500;
+  text-shadow: $text-shadow-strong;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-m;
+  }
+}
+
+// -----------------------------//
+// ----- ABOUT SECTION ------- //
+// ---------------------------//
+#about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Supprimez cette ligne : */
+  /* padding: 0 20px; */
+  box-sizing: border-box;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, minmax(200px, auto));
+  gap: 14px;
+  max-width: $container-width; // Limite la largeur maximale
+  width: 100%;
+  margin: 0 auto; // Centre horizontalement
+  box-sizing: border-box;
+}
+
+.aboutcases {
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-height: 150px; // ← Ajouté pour éviter l'écrasement
+}
+
+/* Section 1 - PHOTO CLEM */
+.about-case1 {
+  grid-column: span 1;
+  grid-row: span 1;
+  overflow: hidden;
+
+  .img-clem {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Section 2 - BODY COMPOSITION */
+.about-case2 {
+  display: flex;
+}
+.about-case2 h2 {
+  font-size: 1.5rem;
+}
+
+/* Section 3 - TEXTE PRESENTATION */
+.about-case3 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.about-case3 h2 {
+  font-size: 1.5rem;
+}
+
+/* Section 4 - SPOTIFY */
+.about-case4 {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 352px; // hauteur de base sur desktop
+  overflow: hidden; // évite les débordements
+  border-radius: 15px;
+}
+
+/* Section 5 - SYNTHE */
+.about-case5 {
+  grid-column: span 2;
+  grid-row: span 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.about-case5 h2 {
+  font-size: 1.5rem;
+}
+
+/* Section 6 - CHIFFRES SPOT */
+.about-case6 {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 1;
+  grid-row: span 1;
+  gap: 1px;
+}
+.about-case6 h2 {
+  font-size: 5rem;
+}
+
+// ----- KEYBOARD ------ //
+
+.keyboard-section {
+  margin-bottom: 1rem;
+}
+#keyboard {
+  height: auto;
+  width: 30rem;
+  max-width: 100%;
+  padding: 2rem 3rem 1rem 3rem;
+  position: relative;
+  border: 3px solid black;
+  border-radius: 1rem;
+  box-shadow: $shadow-button-music;
+  background-image: url("../assets/images/synthwave-3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.white,
+.black {
+  position: relative;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0.5rem 0;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: $shadow-button-music;
+}
+
+#keyboard li:first-child {
+  border-radius: 5px 0 5px 5px;
+}
+
+#keyboard li:last-child {
+  border-radius: 0 5px 5px 5px;
+}
+
+.white {
+  height: 8.5rem;
+  width: 15%;
+  min-width: 2rem;
+  z-index: 1;
+  border-left: 1px solid hsl(0, 0%, 73%);
+  border-bottom: 1px solid hsl(0, 0%, 73%);
+  border-radius: 0 0 5px 5px;
+  box-shadow: -1px 0 0 var(--white-80) inset, 0 0 5px hsl(0, 0%, 80%) inset,
+    0 0 3px var(--black-20);
+  background: linear-gradient(to bottom, hsl(0, 0%, 93%) 0%, white 100%);
+  color: black;
+  font-size: 0.8rem;
+}
+
+.black {
+  height: 5rem;
+  width: 7%;
+  min-width: 1.2rem;
+  margin: 0 0 0 -0.6rem;
+  z-index: 2;
+  border: 1px solid black;
+  border-radius: 0 0 3px 3px;
+  box-shadow: -1px -1px 2px var(--white-20) inset,
+    0 -5px 2px 3px var(--black-60) inset, 0 2px 4px var(--black-50);
+  background: linear-gradient(45deg, hsl(0, 0%, 13%) 0%, hsl(0, 0%, 33%) 100%);
+  color: white;
+  font-size: 0.65rem;
+}
+
+.white.pressed {
+  border-top: 1px solid hsl(0, 0%, 47%);
+  border-left: 1px solid hsl(0, 0%, 60%);
+  border-bottom: 1px solid hsl(0, 0%, 60%);
+  box-shadow: 2px 0 3px var(--black-10) inset,
+    -5px 5px 20px var(--black-20) inset, 0 0 3px var(--black-20);
+  background: linear-gradient(to bottom, white 0%, hsl(0, 0%, 91%) 100%);
+  outline: none;
+}
+
+.black.pressed {
+  box-shadow: -1px -1px 2px var(--white-20) inset,
+    0 -2px 2px 3px var(--black-60) inset, 0 1px 2px var(--black-50);
+  background: linear-gradient(
+    to right,
+    hsl(0, 0%, 27%) 0%,
+    hsl(0, 0%, 13%) 100%
+  );
+  outline: none;
+}
+
+// ----------------------------//
+// ----- PROJECTS SECTION --- //
+// --------------------------//
+#projects {
+  min-height: 100vh;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: var(--header-height); /* espace pour header fixe */
+}
+
+#projects .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.projects-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Colonne gauche - Image en FULL avec overlay élégant */
+.projects-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  border-radius: 0 20px 0 0;
+}
+
+/* Overlay gradient pour un effet premium */
+.projects-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.image-wrapper.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Colonne droite - Liste des projets avec design moderne */
+.projects-list-container {
+  position: relative;
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: 20px 0 0 0;
+}
+
+.section-title {
+  font-size: 1rem;
+  margin: 0 0 4rem 0;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #e8b43b;
+  opacity: 0.8;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #e8b43b;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Item de projet avec numérotation */
+.project-item {
+  display: block;
+  text-decoration: none;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.project-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 100%;
+  background: rgba(232, 180, 59, 0.05);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.project-item:hover::before {
+  width: 100%;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-item:hover {
+  padding-left: 2rem;
+  border-bottom-color: rgba(232, 180, 59, 0.3);
+}
+
+.project-item:hover .project-name {
+  color: #e8b43b;
+}
+
+.project-item:hover .project-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Header du projet */
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+/* Numéro du projet */
+.project-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e8b43b;
+  opacity: 0.5;
+  min-width: 40px;
+}
+
+/* Contenu du projet */
+.project-content {
+  flex: 1;
+}
+
+.project-name {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  line-height: 1.2;
+}
+
+.project-category {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Flèche animée */
+.project-arrow {
+  font-size: 1.5rem;
+  color: #e8b43b;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Badge "Nouveau" optionnel */
+.project-badge {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: #e8b43b;
+  color: #000;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .projects-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh auto;
+    min-height: auto;
+  }
+
+  .projects-image-container {
+    height: 60vh;
+  }
+
+  .projects-list-container {
+    padding: 3rem 2rem;
+  }
+
+  .project-name {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-list-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-item {
+    padding: 2rem 0;
+  }
+
+  .project-name {
+    font-size: 1.4rem;
+  }
+
+  .project-category {
+    font-size: 0.85rem;
+  }
+
+  .project-number {
+    font-size: 0.75rem;
+  }
+}
+// ---- CONTACT ---- //
+
+#contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--header-height); /* espace pour header fixe */
+}
+
+#contact .contact-container {
+  display: grid;
+  width: 100%;
+  height: calc(100vh - 104px);
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: red;
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 80px);
+  }
+}

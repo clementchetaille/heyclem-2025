@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeyClem</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/heyclem-logo-symbol.png"
+    />
+  </head>
+  <body>
+    <!-- HEADER (disparaît au scroll) -->
+    <div id="header-placeholder"></div>
+    <!-- PROJECTS -->
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="projects-layout">
+          <!-- Colonne gauche : Image qui change -->
+          <div class="projects-image-container">
+            <div class="image-wrapper active" data-project="project1">
+              <img
+                src="../assets/images/pesonolight-screenshot1.png"
+                alt="PE Sono Light"
+              />
+            </div>
+            <div class="image-wrapper" data-project="project2">
+              <img
+                src="../assets/images/urban-tendances-screenshot-site2.png"
+                alt="Urban Tendances"
+              />
+            </div>
+            <div class="image-wrapper" data-project="project3">
+              <img src="../assets/images/projet3.png" alt="Projet 3" />
+            </div>
+          </div>
+
+          <!-- Colonne droite : Liste des projets -->
+          <div class="projects-list-container">
+            <h1 class="section-title">PROJETS</h1>
+
+            <div class="projects-list">
+              <div class="project-item active" data-project="project1">
+                <a href="pe-sonolight-page.html">
+                  <div class="project-header">
+                    <span class="project-arrow">→</span>
+                    <h2 class="project-name">PE Sono Light</h2>
+                    <span class="project-category">Web Development</span>
+                  </div></a
+                >
+              </div>
+
+              <div class="project-item" data-project="project2">
+                <a href="urban-tendances-page.html">
+                  <div class="project-header">
+                    <span class="project-arrow">→</span>
+                    <h2 class="project-name">Urban Tendances</h2>
+                    <span class="project-category">E-commerce</span>
+                  </div></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js"></script>
+    <script src="js/synthe.js"></script>
+    <script src="js/projects.js"></script>
+  </body>
+</html>

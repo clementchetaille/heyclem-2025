@@ -1,0 +1,59 @@
+// Responsive breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1400px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}
+
+// Fluid typography
+@mixin fluid-font($min-size, $max-size, $min-width: 320, $max-width: 1400) {
+  font-size: clamp(
+    #{$min-size}rem,
+    calc(
+      #{$min-size}rem + (#{$max-size} - #{$min-size}) *
+        ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width}))
+    ),
+    #{$max-size}rem
+  );
+}
+
+// Fluid spacing
+@mixin fluid-space(
+  $property,
+  $min-size,
+  $max-size,
+  $min-width: 320,
+  $max-width: 1400
+) {
+  #{$property}: clamp(
+    #{$min-size}rem,
+    calc(
+      #{$min-size}rem + (#{$max-size} - #{$min-size}) *
+        ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width}))
+    ),
+    #{$max-size}rem
+  );
+}
