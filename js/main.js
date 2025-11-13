@@ -17,10 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
           body.classList.add("dark");
         }
 
+        // ✅ ICI : Remplacez cette partie
         checkbox.addEventListener("change", () => {
           const isDark = checkbox.checked;
           body.classList.toggle("dark", isDark);
           localStorage.setItem("darkMode", isDark);
+
+          // Fix: Force repaint sur Safari/Firefox mobile
+          window.getComputedStyle(body).backgroundColor;
         });
       }
 
