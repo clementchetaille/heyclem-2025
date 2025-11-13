@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
+  // ✅ Activer les transitions APRÈS le chargement
+  setTimeout(() => {
+    body.classList.add("theme-loaded");
+  }, 100);
+
   // Charger le header dynamiquement
   fetch("header.html")
     .then((response) => response.text())

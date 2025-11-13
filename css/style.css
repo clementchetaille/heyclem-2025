@@ -80,9 +80,11 @@ body.projets-page {
 
 body {
   background-color: var(--background-color);
-  transition: background-color 0.4s ease;
   position: relative;
   color: var(--text);
+}
+body.theme-loaded {
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 body::before {
   content: "";
