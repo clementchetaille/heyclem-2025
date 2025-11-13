@@ -22,6 +22,33 @@
     <!-- HEADER (disparaît au scroll) -->
     <div id="header-placeholder"></div>
 
+    <!-- TEST DEBUG -->
+    <div
+      style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: red;
+        color: white;
+        padding: 20px;
+        z-index: 9999;
+      "
+    >
+      <p>Body classes: <span id="debug-classes"></span></p>
+      <p>BG color: <span id="debug-bg"></span></p>
+    </div>
+
+    <script>
+      setInterval(() => {
+        document.getElementById("debug-classes").textContent =
+          document.body.className;
+        document.getElementById("debug-bg").textContent = getComputedStyle(
+          document.body
+        ).backgroundColor;
+      }, 500);
+    </script>
+
     <!-- HERO -->
     <section id="hero" class="section">
       <div class="container">
