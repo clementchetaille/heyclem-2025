@@ -24,6 +24,10 @@ h4 {
   color: var(--text);
 }
 
+span {
+  color: var(--text);
+}
+
 p,
 ul {
   line-height: 1.6;
@@ -34,5 +38,4 @@ ul {
 
 a {
   text-decoration: none; /* Enlève le soulignement */
-  color: #0066cc; /* Couleur de votre choix */
 }

@@ -15,14 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
           checkbox.checked = true;
           body.classList.add("dark");
         }
-
         checkbox.addEventListener("change", () => {
           const isDark = checkbox.checked;
           body.classList.toggle("dark", isDark);
           localStorage.setItem("darkMode", isDark);
         });
       }
-
       // === MENU HAMBURGER ===
       const hamburger = document.querySelector(".hamburger");
       const navBar = document.querySelector(".nav-bar");
@@ -48,20 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
             hamburger.classList.remove("active");
             navBar.classList.remove("active");
             body.classList.remove("menu-open");
-          }
-        });
-      }
-
-      // === HEADER QUI DISPARAÎT AU SCROLL ===
-      const header = document.querySelector(".header");
-      const scrollThreshold = 100;
-      if (header) {
-        window.addEventListener("scroll", () => {
-          const currentScroll = window.pageYOffset;
-          if (currentScroll <= 10) {
-            header.classList.remove("header--hidden");
-          } else if (currentScroll > scrollThreshold) {
-            header.classList.add("header--hidden");
           }
         });
       }

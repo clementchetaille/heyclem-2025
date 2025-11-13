@@ -57,3 +57,28 @@ $breakpoint-large: 1400px;
     #{$max-size}rem
   );
 }
+
+// PAGE PROJET //
+
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+@mixin card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  transition: $transition;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+  }
+}

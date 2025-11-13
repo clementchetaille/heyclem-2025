@@ -19,11 +19,16 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden; // ← Empêche le scroll sur desktop
+  padding: 0 0;
+  // overflow: hidden; // ← Empêche le scroll sur desktop
 
   @media (max-width: 768px) {
     overflow-y: auto; // ← Permet le scroll sur mobile
   }
+}
+
+body.projets-page {
+  padding: 0 !important;
 }
 
 body {
