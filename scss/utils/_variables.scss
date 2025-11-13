@@ -31,21 +31,14 @@ $text-shadow-strong: 2px 4px 5px rgba(47, 46, 46, 0.5);
 $shadow-button-music: rgba(0, 0, 0, 0.377) 4px 6px 4px,
   #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -3.2px -3.2px 8px 0px inset;
 
-// AUTOMATION SHADOW //
 :root {
   --shadow: 0 0 10px rgba(49, 47, 47, 0.3);
-}
-
-.dark {
-  --shadow: 0 0 10px rgba(203, 197, 197, 0.931);
-}
-
-:root {
   --background-color: #f5ebd4;
   --text: #626a89;
 }
 
-.dark {
+body.dark {
+  --shadow: 0 0 10px rgba(203, 197, 197, 0.931);
   --background-color: #2a2a2a;
   --text: #f5ebd4;
 }
