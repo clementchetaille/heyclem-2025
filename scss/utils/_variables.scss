@@ -1,5 +1,5 @@
 // 🎨 Couleurs
-$color-bg: #f5ebd4;
+$color-bg: hsl(42, 62%, 90%);
 $color-text: #626a89;
 $color-text-darkmode: #f5ebd4;
 $color-accent: #f0a500;
@@ -8,38 +8,6 @@ $color-border: rgba(255, 255, 255, 0.2);
 $color-yellow: #edb74d;
 $color-red: #eb6666;
 $color-green: #79d9c4;
-$gradient-pastel-1: linear-gradient(
-  120deg,
-  #ffd1dc,
-  // rose pastel
-  #a8d8ff // bleu pastel
-);
-$gradient-pastel-2: linear-gradient(
-  135deg,
-  #ffe5d9,
-  // pêche clair
-  #ffb3a7,
-  // corail pastel
-  #fff8b5 // jaune doux
-);
-
-$gradient-pastel-3: linear-gradient(
-  160deg,
-  #e0c3fc,
-  // lavande pastel
-  #a0d8ef,
-  // bleu ciel pastel
-  #b8f1d8 // vert menthe doux
-);
-
-$gradient-pastel-4: linear-gradient(
-  145deg,
-  #ff9a8b,
-  // corail vif
-  #ffb3c1,
-  // rose bonbon
-  #9b5de5 // violet saturé
-);
 
 // 🧱 Structure
 $container-width: 1400px;
@@ -47,7 +15,7 @@ $radius: 20px;
 
 // ✍️ Typo
 $font-main: "Quicksand", sans-serif;
-$font-fira: "Fira Code", sans-serif;
+$font-fira: "FiraCode", sans-serif;
 $font-size-base: 16px;
 $font-size-l: 30px;
 $font-size-m: 60px;

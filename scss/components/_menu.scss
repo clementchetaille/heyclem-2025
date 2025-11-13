@@ -28,9 +28,10 @@
   }
 
   a {
+    font-family: $font-fira;
+    font-weight: 400;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: #ffffff;
+    color: $color-bg;
     text-decoration: none;
     opacity: 0;
     transform: translateY(-50px);
@@ -88,6 +89,7 @@ body.menu-open {
   align-items: center;
 
   @media (max-width: 768px) {
+    padding-top: 1.8rem;
     top: 1.5rem;
     right: 1.5rem;
     gap: 1.4rem;

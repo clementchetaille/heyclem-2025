@@ -36,7 +36,6 @@ body {
   transition: background-color 0.4s ease;
   position: relative;
   color: var(--text);
-  text-shadow: $text-shadow-light;
 
   &::before {
     content: "";
@@ -55,5 +54,5 @@ body {
 body.dark {
   // Aucune variable ici, elles viennent déjà de ton fichier variables.scss
   // Optionnellement, tu peux ajouter des styles spécifiques :
-  text-shadow: $text-shadow-strong;
+  text-shadow: $text-shadow-light;
 }
