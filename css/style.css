@@ -30,14 +30,10 @@
 }
 :root {
   --shadow: 0 0 10px rgba(49, 47, 47, 0.3);
-  --background-color: #f5ebd4;
-  --text: #626a89;
 }
 
 body.dark {
   --shadow: 0 0 10px rgba(203, 197, 197, 0.931);
-  --background-color: #2a2a2a;
-  --text: #f5ebd4;
 }
 
 * {
@@ -73,12 +69,10 @@ body.projets-page {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: #f5ebd4;
+  transition: background-color 0.4s ease;
   position: relative;
   color: var(--text);
-}
-body.theme-loaded {
-  transition: background-color 0.4s ease, color 0.4s ease;
 }
 body::before {
   content: "";
@@ -95,6 +89,8 @@ body::before {
 
 /* Mode sombre (quand la classe .dark est sur le body) */
 body.dark {
+  background-color: #2a2a2a;
+  color: #f5ebd4;
   text-shadow: 1px 1px 2px rgba(47, 46, 46, 0.2);
 }
 
@@ -107,24 +103,24 @@ body {
 
 h1 {
   font-size: 3rem;
-  color: var(--text);
+  color: #626a89;
 }
 
 h2 {
   font-size: 2rem;
-  color: var(--text);
+  color: #626a89;
 }
 
 h3 {
-  color: var(--text);
+  color: #626a89;
 }
 
 h4 {
-  color: var(--text);
+  color: #626a89;
 }
 
 span {
-  color: var(--text);
+  color: #626a89;
 }
 
 p,
@@ -132,11 +128,21 @@ ul {
   line-height: 1.6;
   font-size: 16px;
   opacity: 0.9;
-  color: var(--text);
+  color: #626a89;
 }
 
 a {
-  text-decoration: none; /* Enlève le soulignement */
+  text-decoration: none;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark span,
+body.dark p,
+body.dark ul {
+  color: #f5ebd4;
 }
 
 .header {

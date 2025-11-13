@@ -7,32 +7,22 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       document.getElementById("header-placeholder").innerHTML = data;
 
-      alert("✅ Header chargé");
-
       // === SWITCH DARK MODE ===
       const checkbox = document.querySelector(".switch input");
 
-      if (!checkbox) {
-        alert("❌ ERREUR : Checkbox introuvable !");
-        return;
+      if (checkbox) {
+        // Appliquer le thème sauvegardé
+        if (localStorage.getItem("darkMode") === "true") {
+          checkbox.checked = true;
+          body.classList.add("dark");
+        }
+
+        checkbox.addEventListener("change", () => {
+          const isDark = checkbox.checked;
+          body.classList.toggle("dark", isDark);
+          localStorage.setItem("darkMode", isDark);
+        });
       }
-
-      alert("✅ Checkbox trouvé");
-
-      // Appliquer le thème sauvegardé
-      if (localStorage.getItem("darkMode") === "true") {
-        checkbox.checked = true;
-        body.classList.add("dark");
-        alert("✅ Dark mode activé au chargement");
-      }
-
-      checkbox.addEventListener("change", () => {
-        const isDark = checkbox.checked;
-        alert("🎯 Clic détecté ! isDark = " + isDark);
-        body.classList.toggle("dark", isDark);
-        localStorage.setItem("darkMode", isDark);
-        alert("Classes body: " + body.className);
-      });
 
       // === MENU HAMBURGER ===
       const hamburger = document.querySelector(".hamburger");

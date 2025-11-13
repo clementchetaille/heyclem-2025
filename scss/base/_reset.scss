@@ -32,15 +32,15 @@ body.projets-page {
 }
 
 body {
-  background-color: var(--background-color);
-  //transition: background-color 0.4s ease;
+  background-color: #f5ebd4;
+  transition: background-color 0.4s ease;
   position: relative;
   color: var(--text);
 
   // Ajoutez la transition uniquement après interaction
-  &.theme-loaded {
-    transition: background-color 0.4s ease, color 0.4s ease;
-  }
+  //&.theme-loaded {
+  //  transition: background-color 0.4s ease, color 0.4s ease;
+  //}
 
   &::before {
     content: "";
@@ -57,5 +57,7 @@ body {
 }
 /* Mode sombre (quand la classe .dark est sur le body) */
 body.dark {
+  background-color: #2a2a2a;
+  color: #f5ebd4;
   text-shadow: $text-shadow-light;
 }

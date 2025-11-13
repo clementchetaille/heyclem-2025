@@ -3,29 +3,30 @@
 body {
   font-family: $font-main;
   font-size: 16px;
-  //color: $color-text; //
   margin: 0;
   padding: 0;
 }
 
 h1 {
   font-size: 3rem;
-  color: var(--text);
+  color: #626a89; // Couleur par défaut
 }
 
 h2 {
   font-size: 2rem;
-  color: var(--text);
+  color: #626a89;
 }
+
 h3 {
-  color: var(--text);
+  color: #626a89;
 }
+
 h4 {
-  color: var(--text);
+  color: #626a89;
 }
 
 span {
-  color: var(--text);
+  color: #626a89;
 }
 
 p,
@@ -33,9 +34,20 @@ ul {
   line-height: 1.6;
   font-size: $font-size-base;
   opacity: 0.9;
-  color: var(--text);
+  color: #626a89;
 }
 
 a {
-  text-decoration: none; /* Enlève le soulignement */
+  text-decoration: none;
+}
+
+// ✅ Mode sombre
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark span,
+body.dark p,
+body.dark ul {
+  color: #f5ebd4;
 }
