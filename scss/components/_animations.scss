@@ -168,49 +168,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 0.4rem;
     position: relative;
     width: 100px;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, minmax(200px, auto));
-  gap: 14px;
-  max-width: $container-width;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 12px;
-    padding: 0 1rem;
-  }
-
-  @include mobile {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
-    padding: 1rem;
-    width: 100%;
-    margin-bottom: 0; // Enlève la marge du bas
-
-    /* Masquer la scrollbar mais garder le scroll */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 }
 
@@ -232,14 +195,14 @@ body.dark .path {
 
 .hand-icon {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   transform-origin: 52% 62%;
   display: inline-block;
-  background-image: url("../assets/icons/hand-point.svg");
+  background-image: url("/assets/icons/hand-point.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 30px;
+  background-size: 25px;
   filter: brightness(0) saturate(100%) invert(37%) sepia(12%) saturate(1015%)
     hue-rotate(195deg) brightness(95%) contrast(87%);
 
