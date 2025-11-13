@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // === FONCTION DARK MODE ===
 function initDarkMode() {
   const body = document.body;
+  const html = document.documentElement; // ← Ajoutez ceci
   const checkbox = document.querySelector(".switch input");
 
   if (!checkbox) {
@@ -48,8 +49,10 @@ function initDarkMode() {
   // Écouter les changements
   checkbox.addEventListener("change", function () {
     const isDark = this.checked;
-    body.classList.toggle("dark", isDark);
-    document.documentElement.classList.toggle("dark", isDark);
+
+    // ✅ Appliquer sur html (documentElement)
+    html.classList.toggle("dark", isDark);
+
     localStorage.setItem("darkMode", isDark);
   });
 }
