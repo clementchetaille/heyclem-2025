@@ -31,7 +31,7 @@
           </section>
           <section class="aboutcases about-case2">
             <span
-              >Hello, moi c’est Clément (ou Clem) 👋<br />
+              >Hello, moi c’est Clément (ou Clem) 👋<br /><br />
               Je suis développeur web front-end et designer UI/UX. Avant ça,
               j’ai passé plusieurs années dans la musique en tant
               qu’artiste-compositeur. Aujourd’hui, je continue d’explorer ma
@@ -256,8 +256,28 @@
             </section>
           </section>
           <section class="aboutcases about-case6">
-            <h2>140K</h2>
-            <h3>auditeurs mensuels</h3>
+            <div class="polaroid-camera">
+              <button class="shutter-button" id="shutterBtn">
+                <span class="shutter-text">CLICK ME !</span>
+              </button>
+
+              <div class="camera-body">
+                <div class="lens">
+                  <div class="lens-inner"></div>
+                </div>
+                <div class="flash" id="flash"></div>
+                <div class="viewfinder"></div>
+                <div class="camera-label">Fuji</div>
+              </div>
+
+              <div class="photo-slot"></div>
+
+              <!-- Sortir la photo du photo-slot -->
+              <div class="polaroid-photo" id="polaroidPhoto">
+                <img src="" alt="Photo" id="photoImg" />
+                <div class="photo-label">HeyClem ©</div>
+              </div>
+            </div>
           </section>
         </div>
         <div class="swipe">
@@ -269,6 +289,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/synthe.js"></script>
+    <script src="js/camera.js"></script>
     <script src="js/projects.js"></script>
   </body>
 </html>
