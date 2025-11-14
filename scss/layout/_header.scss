@@ -3,7 +3,7 @@
 
 .header {
   background-color: transparent;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   color: $color-text;
   padding: 2rem 2rem;
   position: fixed;
@@ -14,6 +14,11 @@
   height: var(--header-height);
   z-index: 100;
   transition: transform 0.3s ease-in-out;
+
+  // Supprimer le blur sur certaines pages
+  .no-header-blur & {
+    backdrop-filter: none;
+  }
 
   @include mobile {
     padding-top: 4rem;

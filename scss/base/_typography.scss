@@ -38,6 +38,7 @@ ul {
 }
 
 a {
+  color: #626a89;
   text-decoration: none;
 }
 
@@ -48,6 +49,7 @@ body.dark h3,
 body.dark h4,
 body.dark span,
 body.dark p,
-body.dark ul {
+body.dark ul,
+body.dark a {
   color: #f5ebd4;
 }
