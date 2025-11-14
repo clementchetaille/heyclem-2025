@@ -194,7 +194,6 @@ body.dark ul {
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 1;
 }
 .section .container {
   width: 100%;
@@ -208,7 +207,6 @@ body.dark ul {
 }
 #hero .container {
   position: relative;
-  z-index: 1;
 }
 @media (max-width: 768px) {
   #hero .container {
