@@ -8,7 +8,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.99);
+  background: rgba(10, 10, 10);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@ body.menu-open {
 // CONTENEUR GRID pour Switch + Hamburger
 .header-controls {
   position: fixed;
-  top: 2rem;
+  top: 2.5rem;
   right: 6rem;
   z-index: 100;
   display: grid;

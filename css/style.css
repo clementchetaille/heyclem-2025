@@ -72,7 +72,7 @@ body {
   background-color: #f5ebd4;
   transition: background-color 0.4s ease;
   position: relative;
-  color: var(--text);
+  color: #626a89;
 }
 body::before {
   content: "";
@@ -154,7 +154,7 @@ body.dark a {
 
 .header {
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   color: #626a89;
   padding: 2rem 2rem;
   position: fixed;
@@ -212,11 +212,7 @@ body.dark a {
 }
 
 #hero {
-  position: relative;
   min-height: 100vh;
-}
-#hero .container {
-  position: relative;
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #hero .container {
@@ -572,6 +568,7 @@ body.dark a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: calc(var(--header-height));
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #about {
@@ -749,7 +746,7 @@ body.dark a {
 .about-case2 {
   display: flex;
   flex-direction: column;
-  text-align: justify;
+  text-align: left;
   line-height: 1.4rem;
   hyphens: none;
   padding: 1rem;
@@ -927,6 +924,7 @@ body.dark-mode .skill-logos img.color-change:hover {
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
+  min-height: 360px;
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   .about-case4 {
@@ -948,6 +946,8 @@ body.dark-mode .skill-logos img.color-change:hover {
 .about-case4 iframe {
   border-radius: 12px;
   flex: 1;
+  height: 100% !important;
+  min-height: 100%;
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   .about-case4 iframe {
@@ -1176,7 +1176,7 @@ body.dark-mode .skill-logos img.color-change:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   padding: 10px;
   padding-bottom: 40px;
-  bottom: -20px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%) translateY(0);
   opacity: 0;
@@ -1184,7 +1184,7 @@ body.dark-mode .skill-logos img.color-change:hover {
 }
 .polaroid-photo.show {
   opacity: 1;
-  transform: translateX(-50%) translateY(100px);
+  transform: translateX(-50%) translateY(10px);
 }
 .polaroid-photo img {
   width: 100%;
@@ -1196,7 +1196,7 @@ body.dark-mode .skill-logos img.color-change:hover {
 
 .photo-label {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 0;
   right: 0;
   text-align: center;
@@ -1811,7 +1811,7 @@ body.dark .camera-label {
 }
 .hero-image {
   position: relative;
-  height: 400px;
+  height: 450px;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -1836,10 +1836,15 @@ body.dark .camera-label {
   padding: 0.4rem 0;
   background: rgba(255, 255, 255, 0.02);
 }
+@media (max-width: 480px) {
+  .quick-info {
+    background: none;
+  }
+}
 
 @media (max-width: 768px) {
   .quick-info {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 }
 .info-grid {
@@ -2396,7 +2401,7 @@ iframe {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.99);
+  background: rgb(10, 10, 10);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
@@ -2457,7 +2462,7 @@ body.menu-open {
 
 .header-controls {
   position: fixed;
-  top: 2rem;
+  top: 2.5rem;
   right: 6rem;
   z-index: 100;
   display: grid;

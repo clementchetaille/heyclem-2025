@@ -1,7 +1,13 @@
 // Attendre que le DOM soit chargé
 document.addEventListener("DOMContentLoaded", function () {
   const photos = [
-    "assets/images/P1003064.jpg",
+    "assets/images/photo2.webp",
+    "assets/images/photo3.webp",
+    "assets/images/photo4.webp",
+    "assets/images/photo5.webp",
+    "assets/images/photo6.webp",
+    "assets/images/photo7.webp",
+    "assets/images/photo8.webp",
 
     // Ajoute tes URLs ici
   ];

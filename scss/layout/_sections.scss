@@ -25,11 +25,11 @@
 // ----- HERO SECTION --- //
 // ----------------------//
 #hero {
-  position: relative;
+  //position: relative;
   min-height: 100vh;
 
   .container {
-    position: relative;
+    //position: relative;
 
     @include ipad-pro {
       display: flex;
@@ -359,6 +359,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: calc(var(--header-height));
 
   @include ipad-pro {
     min-height: auto;
@@ -527,7 +528,7 @@
 .about-case2 {
   display: flex;
   flex-direction: column;
-  text-align: justify;
+  text-align: left;
   line-height: 1.4rem;
   hyphens: none;
   padding: 1rem;
@@ -694,6 +695,7 @@ body.dark-mode .skill-logos img.color-change:hover {
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
+  min-height: 360px;
 
   @include ipad-pro {
     grid-column: span 1;
@@ -712,6 +714,8 @@ body.dark-mode .skill-logos img.color-change:hover {
   iframe {
     border-radius: 12px;
     flex: 1; // ← Ajoute ça pour que l'iframe prenne toute la place
+    height: 100% !important; // ← Force 100% de hauteur
+    min-height: 100%; // ← Ajoute ça
 
     @include ipad-pro {
       min-height: 450px;
@@ -941,7 +945,7 @@ body.dark-mode .skill-logos img.color-change:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   padding: 10px;
   padding-bottom: 40px;
-  bottom: -20px;
+  top: 40px; // ← CHANGE : positionne juste sous le bouton (était bottom: -20px)
   left: 50%;
   transform: translateX(-50%) translateY(0);
   opacity: 0;
@@ -949,7 +953,7 @@ body.dark-mode .skill-logos img.color-change:hover {
 
   &.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(100px); // ← Réduis cette valeur (était 120px)
+    transform: translateX(-50%) translateY(10px); // ← CHANGE : descend de 150px (ajuste selon besoin)
   }
 
   img {
@@ -963,7 +967,7 @@ body.dark-mode .skill-logos img.color-change:hover {
 
 .photo-label {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 0;
   right: 0;
   text-align: center;
@@ -1561,7 +1565,7 @@ body.dark {
 
 .hero-image {
   position: relative;
-  height: 400px;
+  height: 450px;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -1584,10 +1588,14 @@ body.dark {
 .quick-info {
   padding: 0.4rem 0;
   background: rgba(255, 255, 255, 0.02);
+
+  @include mobile {
+    background: none;
+  }
 }
 @media (max-width: 768px) {
   .quick-info {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 }
 

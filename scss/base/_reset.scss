@@ -35,12 +35,7 @@ body {
   background-color: #f5ebd4;
   transition: background-color 0.4s ease;
   position: relative;
-  color: var(--text);
-
-  // Ajoutez la transition uniquement après interaction
-  //&.theme-loaded {
-  //  transition: background-color 0.4s ease, color 0.4s ease;
-  //}
+  color: #626a89; //var(--text);
 
   &::before {
     content: "";
@@ -59,7 +54,7 @@ body {
 
   // Pour le dark mode, ajuste l'opacité
   &.dark-mode::before {
-    opacity: 0.015; // Encore plus subtil en dark
+    opacity: 0.015;
   }
 }
 /* Mode sombre (quand la classe .dark est sur le body) */
