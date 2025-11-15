@@ -30,12 +30,26 @@
 
   .container {
     position: relative;
-    //z-index: 1;
 
-    // Centrer tout le contenu sur mobile
-    @media (max-width: 768px) {
+    @include ipad-pro {
       display: flex;
-      flex-direction: column; // IMPORTANT : ajout pour empiler verticalement
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
@@ -51,12 +65,27 @@
   padding: 10rem;
   margin-top: 1rem;
 
-  // Responsive mobile
-  @media (max-width: 768px) {
+  @include ipad-pro {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1rem;
-    padding: 2rem; // Réduire le padding sur mobile
+    padding: 2rem;
+    text-align: center;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 2rem;
     text-align: center;
   }
 }
@@ -72,7 +101,15 @@
   h2 {
     font-size: $font-size-xl;
 
-    @media (max-width: 768px) {
+    @include ipad-pro {
+      font-size: $font-size-l;
+    }
+
+    @include tablet {
+      font-size: $font-size-l;
+    }
+
+    @include mobile {
       font-size: $font-size-l;
     }
   }
@@ -80,13 +117,32 @@
   .box-anim {
     display: flex;
 
-    @media (max-width: 768px) {
-      transform: scale(0.9); // Réduit l'animation à 60%
+    @include ipad-pro {
+      transform: scale(0.9);
+    }
+
+    @include tablet {
+      transform: scale(0.9);
+    }
+
+    @include mobile {
+      transform: scale(0.9);
     }
   }
 
-  // Sur mobile : mettre l'animation en dernier
-  @media (max-width: 768px) {
+  @include ipad-pro {
+    order: 3;
+    aspect-ratio: auto;
+    width: 100%;
+  }
+
+  @include tablet {
+    order: 3;
+    aspect-ratio: auto;
+    width: 100%;
+  }
+
+  @include mobile {
     order: 3;
     aspect-ratio: auto;
     width: 100%;
@@ -100,32 +156,80 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+
+  @include mobile {
+    gap: 1rem;
+  }
+
+  @include tablet {
+    gap: 0.4rem;
+  }
+
+  @include ipad-pro {
+    gap: 0.4rem;
+  }
 
   h2 {
     font-size: $font-size-xxl;
-    @media (max-width: 768px) {
+
+    @include ipad-pro {
+      font-size: 75px;
+    }
+
+    @include tablet {
+      font-size: 75px;
+    }
+
+    @include mobile {
       font-size: 75px;
     }
   }
 
   h3 {
     font-size: $font-size-l;
-    @media (max-width: 768px) {
+
+    @include ipad-pro {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
       font-size: 20px;
       margin-bottom: 30px;
     }
   }
 
-  // Case avec les 3 liens
   .hero-links {
     display: flex;
     gap: 0.4rem;
     margin-top: 2rem;
 
-    @media (max-width: 768px) {
+    @include ipad-pro {
       gap: 1rem;
       margin-top: 1rem;
-      flex-wrap: wrap; // Permet de passer à la ligne si nécessaire
+      flex-wrap: wrap;
+      justify-content: center;
+      display: none;
+    }
+
+    @include tablet {
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      display: none;
+    }
+
+    @include mobile {
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
       justify-content: center;
       display: none;
     }
@@ -162,7 +266,19 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @include ipad-pro {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  @include tablet {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  @include mobile {
     order: 1;
     width: 100%;
     text-align: center;
@@ -174,8 +290,23 @@
   min-height: 200px;
   align-content: center;
 
-  // Sur mobile : deuxième élément (texte centré)
-  @media (max-width: 768px) {
+  @include ipad-pro {
+    order: 2;
+    min-height: auto;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  @include tablet {
+    order: 2;
+    min-height: auto;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  @include mobile {
     order: 2;
     min-height: auto;
     width: 100%;
@@ -189,7 +320,15 @@
   font-weight: 700;
   text-shadow: $text-shadow-strong;
 
-  @media (max-width: 768px) {
+  @include ipad-pro {
+    font-size: $font-size-l;
+  }
+
+  @include tablet {
+    font-size: $font-size-l;
+  }
+
+  @include mobile {
     font-size: $font-size-l;
   }
 }
@@ -199,7 +338,15 @@
   font-weight: 500;
   text-shadow: $text-shadow-strong;
 
-  @media (max-width: 768px) {
+  @include ipad-pro {
+    font-size: $font-size-m;
+  }
+
+  @include tablet {
+    font-size: $font-size-m;
+  }
+
+  @include mobile {
     font-size: $font-size-m;
   }
 }
@@ -213,6 +360,11 @@
   justify-content: center;
   align-items: center;
 
+  @include ipad-pro {
+    min-height: auto;
+    padding: calc(var(--header-height) + 2rem) 0 2rem;
+  }
+
   @include tablet {
     min-height: auto;
     padding: calc(var(--header-height) + 2rem) 0 2rem;
@@ -220,7 +372,7 @@
 
   @include mobile {
     min-height: auto;
-    padding: calc(var(--header-height) + 2rem) 0 3rem;
+    padding: calc(var(--header-height) + 2rem) 0 2rem;
   }
 }
 
@@ -231,6 +383,10 @@
   height: 100%;
   box-sizing: border-box;
 
+  @include ipad-pro {
+    padding: 0 1rem;
+  }
+
   @include tablet {
     padding: 0 1rem;
   }
@@ -239,7 +395,6 @@
     display: block; // Override le flex de .section
     text-align: left; // Override le text-align de .section
     padding: 0;
-    overflow: hidden;
   }
 }
 
@@ -253,11 +408,40 @@
   margin: 0 auto;
   box-sizing: border-box;
 
+  // ⚠️ ORDRE IMPORTANT : du plus large au plus petit !
+
+  @include ipad-pro {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 4rem 1rem;
+    width: 100%;
+    margin-bottom: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   @include tablet {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 12px;
-    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   @include mobile {
@@ -266,11 +450,9 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1rem;
-    padding: 1rem;
+    padding: 0.5rem; // ← Réduis encore le padding sur mobile
     width: 100%;
-    margin-bottom: 0; // Enlève la marge du bas
-
-    /* Masquer la scrollbar mais garder le scroll */
+    margin-bottom: 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
@@ -289,7 +471,24 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 150px;
 
+  @include ipad-pro {
+    min-width: 85vw;
+    max-width: 85vw;
+    min-height: 500px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+
   @include mobile {
+    min-width: 85vw;
+    max-width: 85vw;
+    min-height: 350px; // ← Réduis de 500px à 350px
+    max-height: 400px; // ← Ajoute une hauteur max
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+
+  @include tablet {
     min-width: 85vw;
     max-width: 85vw;
     min-height: 500px;
@@ -304,10 +503,12 @@
   grid-row: span 1;
   overflow: hidden;
 
+  @include ipad-pro {
+    min-height: 500px;
+  }
+
   @include tablet {
-    grid-column: span 1;
-    grid-row: span 1;
-    min-height: 300px;
+    min-height: 500px;
   }
 
   @include mobile {
@@ -330,11 +531,24 @@
   line-height: 1.4rem;
   hyphens: none;
   padding: 1rem;
-  gap: 3rem;
+  gap: 2rem;
+
+  @include ipad-pro {
+    padding: 2.5rem 1.5rem;
+    min-height: 500px;
+    text-align: left;
+    justify-content: center;
+    gap: 4rem;
+    line-height: 3rem;
+  }
 
   @include tablet {
-    grid-column: span 2;
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    min-height: 500px;
+    text-align: left;
+    justify-content: center;
+    gap: 4rem;
+    line-height: 1.8rem;
   }
 
   @include mobile {
@@ -347,11 +561,19 @@
   }
 }
 
-.about-case2 h2 {
-  font-size: 1.5rem;
+.about-case2 span {
+  font-size: 1rem;
+
+  @include ipad-pro {
+    font-size: 2rem;
+  }
 
   @include mobile {
-    font-size: 2rem;
+    font-size: 1rem;
+  }
+
+  @include tablet {
+    font-size: 8rem;
   }
 }
 
@@ -364,10 +586,14 @@
   padding: 2.4rem;
   gap: 1rem;
 
+  @include ipad-pro {
+    padding: 2rem 1.5rem;
+    min-height: 500px;
+  }
+
   @include tablet {
-    grid-column: span 2;
-    grid-row: span 1;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    min-height: 500px;
   }
 
   @include mobile {
@@ -463,28 +689,40 @@ body.dark-mode .skill-logos img.color-change:hover {
 /* Section 4 - SPOTIFY */
 .about-case4 {
   display: flex;
-  align-items: stretch;
+  align-items: stretch; // ← stretch au lieu de center
   justify-content: center;
   width: 100%;
-  height: 352px;
   overflow: hidden;
   border-radius: 15px;
 
-  @include tablet {
+  @include ipad-pro {
     grid-column: span 1;
-    height: 300px;
-  }
-
-  @include mobile {
-    height: 500px;
-    align-items: center;
     padding: 1rem;
   }
 
+  @include tablet {
+    grid-column: span 1;
+    padding: 0.5rem;
+  }
+
+  @include mobile {
+    padding: 0.5rem;
+  }
+
   iframe {
+    border-radius: 12px;
+    flex: 1; // ← Ajoute ça pour que l'iframe prenne toute la place
+
+    @include ipad-pro {
+      min-height: 450px;
+    }
+
+    @include tablet {
+      min-height: 400px;
+    }
+
     @include mobile {
-      height: 100% !important;
-      max-height: 450px;
+      min-height: 320px; // ← Hauteur minimale pour mobile
     }
   }
 }
@@ -662,7 +900,7 @@ body.dark-mode .skill-logos img.color-change:hover {
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 -2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
-  z-index: 999;
+  z-index: 5;
   pointer-events: all;
 
   &:hover {
@@ -906,7 +1144,7 @@ body.dark {
 .projects-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  height: 100%;
   gap: 2.4rem;
 
   @include desktop {
@@ -965,7 +1203,7 @@ body.dark {
   }
 
   @include mobile {
-    height: 35vh;
+    height: 50vh;
     padding: 1rem;
     order: 2;
   }
@@ -992,9 +1230,10 @@ body.dark {
 
 .image-wrapper img {
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
   box-shadow: none;
+  border-radius: 0px 50px 0px 0px;
 
   @include tablet {
     display: none;
@@ -1011,11 +1250,13 @@ body.dark {
 /* Colonne droite - Liste des projets */
 .projects-list-container {
   background: transparent;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   width: 500px;
   text-align: left;
+  height: calc(100vh - var(--header-height)); // ← Ajoute ça
+  overflow-y: auto; // ← Ajoute ça pour scroller uniquement la liste
 
   @include desktop {
     width: 100%;
@@ -1027,15 +1268,16 @@ body.dark {
 
   @include tablet {
     width: 100%;
-    width: 100%;
-    padding: 6rem 1rem 2rem; // Ajout d'espace en haut
+    padding: 6rem 1rem 2rem;
     order: 1;
+    height: auto; // ← Reset la hauteur sur tablet
   }
 
   @include mobile {
     width: 100%;
-    padding: 5rem 1rem 2rem; // Ajout d'espace en haut
+    padding: 1rem 1rem 2rem;
     order: 1;
+    height: auto; // ← Reset la hauteur sur mobile
   }
 }
 
@@ -1047,6 +1289,10 @@ body.dark {
   margin-bottom: 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid $color-text;
+  position: sticky; // ← Optionnel : garde le titre visible pendant le scroll
+  top: 0; // ← Optionnel
+  background: inherit; // ← Optionnel
+  z-index: 10; // ← Optionnel
 
   @include tablet {
     font-size: 2rem;

@@ -1,6 +1,8 @@
 // Responsive breakpoints
+
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
+$breakpoint-ipad-pro: 1200px;
 $breakpoint-desktop: 1024px;
 $breakpoint-large: 1400px;
 
@@ -11,7 +13,13 @@ $breakpoint-large: 1400px;
 }
 
 @mixin tablet {
-  @media (max-width: #{$breakpoint-tablet}) {
+  @media (min-width: #{$breakpoint-mobile + 1px}) and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin ipad-pro {
+  @media (min-width: #{$breakpoint-tablet + 1px}) and (max-width: #{$breakpoint-ipad-pro}) {
     @content;
   }
 }
