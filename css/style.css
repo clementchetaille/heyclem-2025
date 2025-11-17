@@ -185,7 +185,7 @@ body.dark a {
 }
 
 .logo img {
-  max-height: 40px;
+  max-height: 60px;
   width: auto;
   display: block;
   padding-left: 4rem;
@@ -1580,7 +1580,7 @@ body.dark .camera-label {
 
 .project-arrow {
   font-size: 2rem;
-  color: #79d9c4;
+  color: #7ef0db;
   opacity: 0;
   transition: all 0.3s ease;
   transform: translateX(-10px);
@@ -1799,7 +1799,7 @@ body.dark .camera-label {
 }
 
 .tag:hover {
-  background: #79d9c4;
+  background: #7ef0db;
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1873,7 +1873,7 @@ body.dark .camera-label {
 }
 
 .info-item:hover {
-  background: #79d9c4;
+  background: #7ef0db;
   border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
 }
@@ -1962,7 +1962,7 @@ body.dark .camera-label {
 }
 
 .tech-badge:hover {
-  background: #79d9c4;
+  background: #7ef0db;
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
@@ -2357,7 +2357,7 @@ body.dark .btncv {
 }
 
 .btncv:focus {
-  color: #edb74d;
+  color: #fcc459;
 }
 
 .cards {
@@ -2430,7 +2430,7 @@ iframe {
   transition: opacity 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.2s ease;
 }
 .nav-bar a:hover {
-  color: #79d9c4;
+  color: #7ef0db;
   transform: translateX(15px) scale(1.05) !important;
   text-shadow: 0 0 20px rgba(232, 180, 59, 0.3);
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease, text-shadow 0.2s ease;
@@ -2486,6 +2486,11 @@ body.menu-open {
   margin: 0;
   padding: 0;
   width: auto;
+}
+@media (max-width: 480px) {
+  .switch-mode {
+    display: none;
+  }
 }
 
 .switch {
@@ -2647,7 +2652,7 @@ body.menu-open {
 .box2,
 .box3 {
   border: 20px solid; /* 25 * 2 */
-  color: #60d0bc;
+  color: #7ef0db;
   box-sizing: border-box;
   position: absolute;
   display: block;
@@ -2788,7 +2793,7 @@ body.menu-open {
   width: 20px;
   height: 20px;
   position: absolute;
-  background: #79d9c4;
+  background: #7ef0db;
   border-radius: 40px;
   top: 28px;
   left: 78px;

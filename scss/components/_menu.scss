@@ -104,6 +104,10 @@ body.menu-open {
   margin: 0;
   padding: 0; // ← Pas de padding
   width: auto; // ← Largeur automatique
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .switch {
