@@ -80,18 +80,18 @@ body.menu-open {
 // CONTENEUR GRID pour Switch + Hamburger
 .header-controls {
   position: fixed;
-  top: 2.5rem;
+  top: 3rem;
   right: 6rem;
   z-index: 100;
   display: grid;
   grid-template-columns: auto auto;
-  gap: 2rem; // ← L'espace entre les deux
+  gap: 2.4rem; // ← L'espace entre les deux
   align-items: center;
 
   @media (max-width: 768px) {
     padding-top: 1.8rem;
     top: 1.5rem;
-    right: 1.5rem;
+    right: 1rem;
     gap: 1.4rem;
   }
 }

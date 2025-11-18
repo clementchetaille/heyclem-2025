@@ -532,7 +532,7 @@
   line-height: 1.4rem;
   hyphens: none;
   padding: 1rem;
-  gap: 2rem;
+  gap: 1.4rem;
 
   @include ipad-pro {
     padding: 2.5rem 1.5rem;
@@ -563,7 +563,8 @@
 }
 
 .about-case2 span {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
 
   @include ipad-pro {
     font-size: 2rem;
@@ -584,7 +585,7 @@
   grid-row: span 2;
   display: flex;
   flex-direction: column;
-  padding: 2.4rem;
+  padding: 2rem;
   gap: 1rem;
 
   @include ipad-pro {
@@ -1431,12 +1432,13 @@ body.dark {
 // ======= PROJET INDIVIDUEL ======== //
 // ================================= //
 .project-solo {
+  margin-top: 2rem;
   padding: 0 2rem;
 }
 .back-button {
   position: absolute;
   top: 8rem;
-  left: 1.5rem;
+  left: 6.2rem;
   padding: 0.75rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.7);
