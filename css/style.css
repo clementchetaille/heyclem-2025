@@ -45,11 +45,6 @@ body.dark {
 :root {
   --header-height: 104px;
 }
-@media (max-width: 768px) {
-  :root {
-    --header-height: 80px;
-  }
-}
 
 html,
 body {
@@ -928,6 +923,7 @@ body.dark-mode .skill-logos img.color-change:hover {
 }
 @media (max-width: 480px) {
   .about-case4 {
+    display: none;
     padding: 0.5rem;
   }
 }

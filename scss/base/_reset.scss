@@ -9,10 +9,6 @@
 
 :root {
   --header-height: 104px; // Ajustez selon votre header réel
-
-  @media (max-width: 768px) {
-    --header-height: 80px;
-  }
 }
 
 html,

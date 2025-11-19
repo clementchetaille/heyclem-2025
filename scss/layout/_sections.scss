@@ -709,6 +709,7 @@ body.dark-mode .skill-logos img.color-change:hover {
   }
 
   @include mobile {
+    display: none;
     padding: 0.5rem;
   }
 
