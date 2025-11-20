@@ -1657,7 +1657,7 @@ body.dark .camera-label {
 .back-button {
   position: absolute;
   top: 8rem;
-  left: 6.2rem;
+  left: 2rem;
   padding: 0.75rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -1669,6 +1669,12 @@ body.dark .camera-label {
   transition: all 0.3s ease;
   z-index: 1;
   backdrop-filter: blur(10px);
+}
+@media (min-width: 1900px) {
+  .back-button {
+    left: 7rem;
+    top: 12rem;
+  }
 }
 
 .back-button:hover {

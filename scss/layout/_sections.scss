@@ -1435,7 +1435,7 @@ body.dark {
 .back-button {
   position: absolute;
   top: 8rem;
-  left: 6.2rem;
+  left: 2rem;
   padding: 0.75rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -1447,6 +1447,11 @@ body.dark {
   transition: all 0.3s ease;
   z-index: 1;
   backdrop-filter: blur(10px);
+
+  @include large-screen {
+    left: 7rem;
+    top: 12rem;
+  }
 }
 .back-button:hover {
   background: rgba(255, 255, 255, 0.2);
