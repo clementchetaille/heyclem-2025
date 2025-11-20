@@ -3,7 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HeyClem | À propos</title>
+
+    <!-- ✅ CHANGEMENT 1: Title optimisé -->
+    <title>
+      À Propos - Clément Chetaille | Développeur Web & Designer UI/UX Aix
+    </title>
+
+    <!-- ✅ NOUVEAU 2: Meta description -->
+    <meta
+      name="description"
+      content="Clément Chetaille, développeur web front-end et designer UI/UX à Aix-en-Provence. Spécialisé React, JavaScript, HTML/CSS. Ancien artiste-compositeur passionné par le design et le code."
+    />
+
+    <!-- ✅ NOUVEAU 3: Mots-clés -->
+    <meta
+      name="keywords"
+      content="Clément Chetaille, développeur web Aix, designer UI/UX, React developer, front-end freelance, HeyClem, parcours développeur"
+    />
+
+    <!-- ✅ NOUVEAU 4: Auteur -->
+    <meta name="author" content="Clément Chetaille - HeyClem" />
+
+    <!-- ✅ NOUVEAU 5: Canonical URL -->
+    <link rel="canonical" href="https://heyclem.dev/apropos.html" />
+
+    <!-- ✅ NOUVEAU 6: Open Graph (réseaux sociaux) -->
+    <meta property="og:type" content="profile" />
+    <meta
+      property="og:title"
+      content="À Propos - Clément Chetaille | Développeur Web & Designer"
+    />
+    <meta
+      property="og:description"
+      content="Développeur web front-end et designer UI/UX à Aix-en-Provence. Spécialisé React, JavaScript. Passionné par le design et le code."
+    />
+    <meta property="og:url" content="https://heyclem.dev/apropos.html" />
+    <meta
+      property="og:image"
+      content="https://heyclem.dev/assets/images/heyclem-og-image.webp"
+    />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- ✅ NOUVEAU 7: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="À Propos - Clément Chetaille | Développeur Web"
+    />
+    <meta
+      name="twitter:description"
+      content="Développeur web front-end et designer UI/UX à Aix-en-Provence. Spécialisé React, JavaScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://heyclem.dev/assets/images/heyclem-og-image.webp"
+    />
+
+    <!-- ✅ NOUVEAU 8: Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- VOS LIENS CSS/FONTS EXISTANTS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +76,63 @@
       sizes="16x16"
       href="assets/images/heyclem-logo-symbol.png"
     />
+
+    <!-- ✅ NOUVEAU 9: Schema.org (Person - ProfilePage) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Clément Chetaille",
+          "alternateName": "HeyClem",
+          "jobTitle": "Développeur Web Front-End & Designer UI/UX",
+          "description": "Développeur web front-end et designer UI/UX basé à Aix-en-Provence. Ancien artiste-compositeur, je combine créativité musicale et développement web pour créer des projets beaux et fonctionnels.",
+          "url": "https://heyclem.dev",
+          "image": "https://heyclem.dev/assets/images/photo-clem-1.jpg",
+          "email": "heyclem.contact@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aix-en-Provence",
+            "addressRegion": "Provence-Alpes-Côte d'Azur",
+            "addressCountry": "FR"
+          },
+          "sameAs": [
+            "https://www.instagram.com/heyclem__/",
+            "https://www.linkedin.com/in/clementchetaille/",
+            "https://github.com/clementchetaille",
+            "https://open.spotify.com/intl-fr/artist/4OZ0VK1N3PDtGhY2d6sqhI"
+          ],
+          "knowsAbout": [
+            "Développement Web",
+            "Front-End Development",
+            "React",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "UI/UX Design",
+            "Design Graphique",
+            "Production Musicale"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Développeur Web Front-End Freelance",
+            "occupationLocation": {
+              "@type": "City",
+              "name": "Aix-en-Provence"
+            },
+            "skills": [
+              "HTML5",
+              "CSS3",
+              "JavaScript",
+              "React",
+              "UI/UX Design",
+              "Responsive Design"
+            ]
+          }
+        }
+      }
+    </script>
   </head>
   <body class="no-header-blur">
     <!-- HEADER (disparaît au scroll) -->

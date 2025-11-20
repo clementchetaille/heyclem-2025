@@ -4,6 +4,12 @@
 .loader {
   width: 224px; /* 112 * 2 */
   height: 224px; /* 112 * 2 */
+
+  @include large-screen {
+    width: 320px; /* 112 * 2 */
+    height: 320px;
+    padding-top: 3.2rem;
+  }
 }
 
 .box1,

@@ -1,0 +1,62 @@
+# robots.txt pour HeyClem.dev
+# Généré le 20 novembre 2025
+
+# Autoriser tous les robots à indexer tout le site
+User-agent: *
+Allow: /
+
+# Bloquer l'accès aux dossiers techniques (si vous en avez)
+# Décommentez les lignes ci-dessous si nécessaire
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /node_modules/
+# Disallow: /.git/
+
+# Bloquer les fichiers système et de configuration
+Disallow: /*.log$
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Bloquer les fichiers de sauvegarde
+Disallow: /*~
+Disallow: /*.bak$
+
+# Autoriser explicitement les fichiers CSS et JS (important pour le SEO)
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Localisation du sitemap XML
+Sitemap: https://heyclem.dev/sitemap.xml
+
+# Règles spécifiques pour les principaux moteurs de recherche
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Bloquer les bad bots (spam, scraping abusif)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

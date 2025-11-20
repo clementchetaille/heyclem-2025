@@ -3,7 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HeyClem | Projets</title>
+
+    <!-- ✅ CHANGEMENT 1: Title optimisé -->
+    <title>Portfolio & Projets Web - HeyClem | Développeur Front-End Aix</title>
+
+    <!-- ✅ NOUVEAU 2: Meta description -->
+    <meta
+      name="description"
+      content="Découvrez mes réalisations web : Urban Tendances, PE Sono Light. Sites modernes développés avec React et Vue.js par HeyClem, développeur freelance à Aix-en-Provence."
+    />
+
+    <!-- ✅ NOUVEAU 3: Mots-clés -->
+    <meta
+      name="keywords"
+      content="portfolio développeur web, projets React, sites web modernes, réalisations HeyClem, Urban Tendances, PE Sono Light"
+    />
+
+    <!-- ✅ NOUVEAU 4: Auteur -->
+    <meta name="author" content="Clément Chetaille - HeyClem" />
+
+    <!-- ✅ NOUVEAU 5: Canonical URL -->
+    <link rel="canonical" href="https://heyclem.dev/projets.html" />
+
+    <!-- ✅ NOUVEAU 6: Open Graph (réseaux sociaux) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portfolio & Projets Web - HeyClem" />
+    <meta
+      property="og:description"
+      content="Découvrez mes réalisations web : sites modernes développés avec React et Vue.js."
+    />
+    <meta property="og:url" content="https://heyclem.dev/projets.html" />
+    <meta
+      property="og:image"
+      content="https://heyclem.dev/assets/images/heyclem-og-image.webp"
+    />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- ✅ NOUVEAU 7: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio & Projets Web - HeyClem" />
+    <meta
+      name="twitter:description"
+      content="Découvrez mes réalisations web : sites modernes développés avec React et Vue.js."
+    />
+    <meta
+      name="twitter:image"
+      content="https://heyclem.dev/assets/images/heyclem-og-image.webp"
+    />
+
+    <!-- ✅ NOUVEAU 8: Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- VOS LIENS CSS/FONTS EXISTANTS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +68,52 @@
       sizes="16x16"
       href="assets/images/heyclem-logo-symbol.png"
     />
+
+    <!-- ✅ NOUVEAU 9: Schema.org (CollectionPage avec liste de projets) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Portfolio & Projets Web - HeyClem",
+        "description": "Portfolio de réalisations web par HeyClem, développeur front-end freelance",
+        "url": "https://heyclem.dev/projets.html",
+        "author": {
+          "@type": "Person",
+          "name": "Clément Chetaille",
+          "jobTitle": "Développeur Web Front-End Freelance",
+          "url": "https://heyclem.dev"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "CreativeWork",
+              "position": 1,
+              "name": "PE Sono Light",
+              "description": "Site web développé pour PE Sono Light",
+              "url": "https://heyclem.dev/pe-sonolight-page.html",
+              "image": "https://heyclem.dev/assets/images/pe-sono-logo-only.webp",
+              "creator": {
+                "@type": "Person",
+                "name": "Clément Chetaille"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 2,
+              "name": "Urban Tendances",
+              "description": "Site e-commerce développé pour Urban Tendances",
+              "url": "https://heyclem.dev/urban-tendances-page.html",
+              "image": "https://heyclem.dev/assets/images/logo-ut-2025-heyclem.webp",
+              "creator": {
+                "@type": "Person",
+                "name": "Clément Chetaille"
+              }
+            }
+          ]
+        }
+      }
+    </script>
   </head>
   <body class="projets-page no-header-blur">
     <!-- HEADER (disparaît au scroll) -->

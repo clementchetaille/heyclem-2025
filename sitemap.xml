@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Page d'accueil - Priorité maximale -->
+  <url>
+    <loc>https://heyclem.dev/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Page À propos - Haute priorité -->
+  <url>
+    <loc>https://heyclem.dev/apropos.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Page Projets - Haute priorité -->
+  <url>
+    <loc>https://heyclem.dev/projets.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Page Contact - Haute priorité -->
+  <url>
+    <loc>https://heyclem.dev/contact.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projet Urban Tendances - Priorité moyenne-haute -->
+  <url>
+    <loc>https://heyclem.dev/urban-tendances-page.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Projet PE Sono Light - Priorité moyenne-haute -->
+  <url>
+    <loc>https://heyclem.dev/pe-sonolight-page.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

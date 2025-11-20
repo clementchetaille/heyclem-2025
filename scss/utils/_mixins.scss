@@ -4,7 +4,7 @@ $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-ipad-pro: 1200px;
 $breakpoint-desktop: 1024px;
-$breakpoint-large: 1400px;
+$breakpoint-large: 1900px;
 
 @mixin mobile {
   @media (max-width: #{$breakpoint-mobile}) {

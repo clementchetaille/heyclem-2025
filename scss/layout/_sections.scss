@@ -128,6 +128,10 @@
     @include mobile {
       transform: scale(0.9);
     }
+
+    @include large-screen {
+      transform: scale(1.2);
+    }
   }
 
   @include ipad-pro {
@@ -155,6 +159,7 @@
   align-content: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
 
@@ -170,24 +175,28 @@
     gap: 0.4rem;
   }
 
-  h2 {
-    font-size: $font-size-xxl;
+  h1 {
+    font-size: 8rem;
 
     @include ipad-pro {
-      font-size: 75px;
+      font-size: 120px;
     }
 
     @include tablet {
-      font-size: 75px;
+      font-size: 120px;
     }
 
     @include mobile {
-      font-size: 75px;
+      font-size: 70px;
+    }
+
+    @include large-screen {
+      font-size: 200px;
     }
   }
 
-  h3 {
-    font-size: $font-size-l;
+  h2 {
+    font-size: 2rem;
 
     @include ipad-pro {
       font-size: 20px;
@@ -316,21 +325,8 @@
 }
 
 #hero h1 {
-  font-size: $font-size-xl;
   font-weight: 700;
   text-shadow: $text-shadow-strong;
-
-  @include ipad-pro {
-    font-size: $font-size-l;
-  }
-
-  @include tablet {
-    font-size: $font-size-l;
-  }
-
-  @include mobile {
-    font-size: $font-size-l;
-  }
 }
 
 #hero p {
@@ -1561,8 +1557,8 @@ body.dark {
   transition: all 0.3s ease;
 }
 .tag:hover {
-  background: $color-green;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
 }
 @media (max-width: 480px) {
   .tag {
@@ -1649,7 +1645,6 @@ body.dark {
   transition: all 0.3s ease;
 }
 .info-item:hover {
-  background: $color-green;
   border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
 }
@@ -1734,7 +1729,6 @@ body.dark {
   transition: all 0.3s ease;
 }
 .tech-badge:hover {
-  background: $color-green;
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
@@ -1903,7 +1897,7 @@ body.dark {
   max-width: 800px;
   width: 100%;
 
-  h2 {
+  h1 {
     font-size: 80px;
     color: #4a5f7f; // Votre bleu navy
     margin-bottom: 4rem;
